@@ -92,13 +92,19 @@ class Welcome extends StatelessWidget{
                         Padding(
                           padding: EdgeInsets.all(16.0),
                           child: Container(
-                            child: Text('Apolo',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueAccent,fontSize: 40),),
+                            child: Image.asset('lib/assets/images/Toth.png',width: 300,),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.all(16.0),
                           child: Container(
-                            child: Text('El lugar donde tus ideas pueden volar y llegar hasta el olimpo',textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black38),)
+                            child: Text('Toth',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueAccent,fontSize: 40),),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Container(
+                            child: Text('El lugar donde tus ideas pueden volar y llegar hasta el Aaru',textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black38),)
                           ),
                         ),
                         Padding(
