@@ -1,5 +1,6 @@
-
+import 'login.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         //'/': (context) => Start(),
         '/welcome': (context)=> Welcome(),
-        //'/login': (context)=>Login(),
+        '/login': (context)=>login(),
         //'/newacount': (context)=>NewAccount(),
         //'/home': (context)=>Home();
       },
@@ -113,7 +114,7 @@ class Welcome extends StatelessWidget{
                                 height: 60,
                                 child:  ButtonTheme(
                                   minWidth: 300,
-                                  child:  RaisedButton(onPressed: (){Navigator.pushNamed(context,'/');}, child: Text('Inicia Sesión', style: TextStyle(color: Colors.white),)),
+                                  child:  RaisedButton(onPressed: (){Navigator.pushNamed(context,'/login');}, child: Text('Inicia Sesión', style: TextStyle(color: Colors.white),)),
                                 )
                             )
                         ),
