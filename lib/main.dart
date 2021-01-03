@@ -1,3 +1,5 @@
+import 'package:proyecto_ubicua/register.dart';
+
 import 'login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -20,6 +22,7 @@ class MyApp extends StatelessWidget {
         //'/': (context) => Start(),
         '/welcome': (context)=> Welcome(),
         '/login': (context)=>login(),
+        '/register': (context)=>register(),
         //'/newacount': (context)=>NewAccount(),
         //'/home': (context)=>Home();
       },
@@ -124,7 +127,7 @@ class Welcome extends StatelessWidget{
                                 height: 60,
                                 child:  ButtonTheme(
                                   minWidth: 300,
-                                  child:  RaisedButton(onPressed: (){Navigator.pushNamed(context,'/');}, child: Text('Regístrate', style: TextStyle(color: Colors.white),)),
+                                  child:  RaisedButton(onPressed: (){Navigator.pushNamed(context,'/register');}, child: Text('Regístrate', style: TextStyle(color: Colors.white),)),
                                 )
                             )
                         ),
