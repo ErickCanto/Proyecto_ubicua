@@ -2,6 +2,7 @@ import 'package:proyecto_ubicua/register.dart';
 
 import 'login.dart';
 import 'package:flutter/material.dart';
+import 'Feed.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() {
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/welcome': (context)=> Welcome(),
         '/login': (context)=>login(),
         '/register': (context)=>register(),
+        '/feed': (context)=>Feed(),
         //'/newacount': (context)=>NewAccount(),
         //'/home': (context)=>Home();
       },

@@ -40,7 +40,7 @@ class login extends StatelessWidget
                               ButtonTheme(
                                   minWidth: 300,
                                   child:
-                                  RaisedButton(onPressed: (){Navigator.pushNamed(context, '/Inicio');}, child: Text('Ingresar',style: TextStyle(color: Colors.white)),color: Colors.blue)
+                                  RaisedButton(onPressed: (){Navigator.pushNamed(context, '/feed');}, child: Text('Ingresar',style: TextStyle(color: Colors.white)),color: Colors.blue)
                               )
                           ),
                           SizedBox(height: 90),
