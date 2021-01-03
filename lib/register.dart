@@ -89,7 +89,7 @@ class register extends StatelessWidget{
                                   Expanded(
                                       flex: 4,
                                       child: Container(
-                                          child: Text('Acepto los Terminos y condiciones y autorizo el uso de mis datos de acuerdo con la Declaracion de Privacidad', style: TextStyle(color: Colors.black,fontSize: 16),)
+                                          child: Text('Acepto los Términos y condiciones y autorizo el uso de mis datos de acuerdo con la Declaracion de Privacidad', style: TextStyle(color: Colors.black,fontSize: 16),)
                                       )
                                   )
                                 ]
