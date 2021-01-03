@@ -21,14 +21,10 @@ class States extends State<Feed>
             automaticallyImplyLeading: true,
             actions: [
               SizedBox(
-                //width: MediaQuery.of(context).size.width*0.5,
-                child: Text("Toth")
-              ),
-              SizedBox(
                   width: MediaQuery.of(context).size.width*0.5,
                   child: TextField(controller: searchcontroller)
               ),
-              IconButton(icon: Icon(Icons.shopping_cart), onPressed: (){},iconSize: 20,)
+              IconButton(icon: Icon(Icons.search), onPressed: (){},iconSize: 20,)
             ]
         ),
       body:
@@ -48,11 +44,11 @@ class States extends State<Feed>
             DrawerHeader(
               child: Text('Drawer Header'),
               decoration: BoxDecoration(
-                color: Colors.yellow,
+                color: Colors.blue,
               ),
             ),
             ListTile(
-              title: Text('Item 1'),
+              title: Text('Categorias'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -61,7 +57,16 @@ class States extends State<Feed>
               },
             ),
             ListTile(
-              title: Text('Item 2'),
+              title: Text('Perfil'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Ayuda'),
               onTap: () {
                 // Update the state of the app
                 // ...
