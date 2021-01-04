@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "293919715513",
-    "project_id": "proyecto-ubicua-6c4ef",
-    "storage_bucket": "proyecto-ubicua-6c4ef.appspot.com"
+    "project_number": "137933854405",
+    "project_id": "proyecto-ubicua-e5699",
+    "storage_bucket": "proyecto-ubicua-e5699.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:293919715513:android:fe9599b3444f795d1f6b68",
+        "mobilesdk_app_id": "1:137933854405:android:ccda74eefd3430233ec2ac",
         "android_client_info": {
           "package_name": "com.example.proyecto_ubicua"
         }
       },
       "oauth_client": [
         {
-          "client_id": "293919715513-n1g710bsl8d5hcpt5adgs6e53u67eqvq.apps.googleusercontent.com",
+          "client_id": "137933854405-f3i1hi28ssf521ia7ohsolkngf09bnsa.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBkqlaoQN3iPm0N_cZsauLsKtEZubZZH3M"
+          "current_key": "AIzaSyA-dyiH_NvM8Eauwxmvb-GYnIvD3f1E7cE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "293919715513-n1g710bsl8d5hcpt5adgs6e53u67eqvq.apps.googleusercontent.com",
+              "client_id": "137933854405-f3i1hi28ssf521ia7ohsolkngf09bnsa.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
