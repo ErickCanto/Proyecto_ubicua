@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'popup.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:proyecto_ubicua/ObjetosdeFeed.dart';
 
 class profile extends StatefulWidget{
   @override
@@ -102,9 +102,27 @@ class stateprofile extends State<profile>
                       color: Colors.black12,
                       thickness: 3,
                     ),
-                  )
+                  ),
                   //TODO: A partir de aqui se comenzaría a llenar con cosas de la persona
                   //TODO: Voy a investigar la forma de hacerlo fácil
+                  ObjetoTexto(
+                    publicador: "Anubius Rubius Malandrus",
+                    imagenpublicador: "lib/assets/images/Toth.png",
+                    text: "Esta es mi primera publiacion que nervios tengo omg esto si que mola",
+                    date: "4 de Febrero de 2020"
+                  ),
+                  ObjetoTexto(
+                      publicador: "Anubius Rubius Malandrus",
+                      imagenpublicador: "lib/assets/images/Toth.png",
+                      text: "Esta es mi primera publiacion que nervios tengo omg esto si que mola",
+                      date: "4 de Febrero de 2020"
+                  ),
+                  ObjetoTexto(
+                      publicador: "Anubius Rubius Malandrus",
+                      imagenpublicador: "lib/assets/images/Toth.png",
+                      text: "Esta es mi primera publiacion que nervios tengo omg esto si que mola",
+                      date: "4 de Febrero de 2020"
+                  ),
                 ],
               )
             ],
