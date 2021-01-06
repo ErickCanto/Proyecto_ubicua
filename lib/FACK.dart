@@ -47,11 +47,11 @@ class FAQ extends StatelessWidget
                                 'Chick Corea en youtube. No se arrepentirá ', style: (TextStyle(fontWeight: FontWeight.normal, fontSize: 17)), textAlign: TextAlign.justify,),
                           ),
                           Container(
-                            child: Text('¿Por que el proyecto no funciona?', style: (TextStyle(fontWeight: FontWeight.bold, fontSize: 18)), textAlign: TextAlign.center,),
+                            child: Text('¿Como puedo eliminar un elemento de mi perfil?', style: (TextStyle(fontWeight: FontWeight.bold, fontSize: 18)), textAlign: TextAlign.center,),
                           ),
                           Container(
                             padding: EdgeInsets.all(16),
-                            child: Text('¿Como puedo borrar un elemento de mi perfil?'
+                            child: Text('El proyecto, aunque terminado, no contiene la funcionalidad'
                                 'de una aplicación desarrollada en más de un mes debido a la falta de tiempo'
                                 'en el proceso de desarrollo de este proyecto, por lo cual cosas como el login y el delete'
                                 'no funcionan correctamente', style: (TextStyle(fontWeight: FontWeight.normal, fontSize: 17)), textAlign: TextAlign.justify,),

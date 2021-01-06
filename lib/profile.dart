@@ -243,13 +243,13 @@ class stateprofile extends State<profile>
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pop(context);
-                Navigator.pop(context);
               },
             ),
             ListTile(
               title: Text('Ayuda'),
               onTap: () {
                 Navigator.pop(context);
+                Navigator.pushNamed(context, '/faq');
               },
             ),
           ],
