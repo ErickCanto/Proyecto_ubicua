@@ -161,6 +161,7 @@ class States extends State<Feed>
                 // ...
                 // Then close the drawer
                 Navigator.pop(context);
+                Navigator.pushNamed(context, '/faq');
               },
             ),
           ],

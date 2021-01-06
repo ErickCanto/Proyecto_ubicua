@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'Feed.dart';
 import 'profile.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'FACK.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         '/feed': (context) => Feed(),
         '/profile': (context) => profile(),
         '/pubCreate': (context) => pubCreate(),
+        '/faq': (context)=> FAQ(),
         //'/newacount': (context)=>NewAccount(),
         //'/home': (context)=>Home();
       },
