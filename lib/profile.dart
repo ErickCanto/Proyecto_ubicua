@@ -39,7 +39,7 @@ class stateprofile extends State<profile>
                     children: [
                       Container(
                         alignment: Alignment.topCenter,
-                        child: Image.asset("lib/assets/images/Toth.png",width: 200, height: 200),
+                        child: Image.asset("lib/assets/images/Erick.jpeg",width: 200, height: 200),
                       ),
                       Container(
                         //width: 200,
@@ -80,20 +80,12 @@ class stateprofile extends State<profile>
                     itemBuilder: (BuildContext context) => <PopupMenuEntry<WhyFarther>>[
                       const PopupMenuItem<WhyFarther>(
                         value: WhyFarther.harder,
-                        child: Text('Working a lot harder'),
+                        child: Text('Reportar Usuario'),
                       ),
                       const PopupMenuItem<WhyFarther>(
                         value: WhyFarther.smarter,
-                        child: Text('Being a lot smarter'),
-                      ),
-                      const PopupMenuItem<WhyFarther>(
-                        value: WhyFarther.selfStarter,
-                        child: Text('Being a self-starter'),
-                      ),
-                      const PopupMenuItem<WhyFarther>(
-                        value: WhyFarther.tradingCharter,
-                        child: Text('Placed in charge of trading charter'),
-                      ),
+                        child: Text('Reportar un problema'),
+                      )
                     ],
                   ),
                   Container(
@@ -107,19 +99,19 @@ class stateprofile extends State<profile>
                   //TODO: Voy a investigar la forma de hacerlo fácil
                   ObjetoTexto(
                     publicador: "Anubius Rubius Malandrus",
-                    imagenpublicador: "lib/assets/images/Toth.png",
+                    imagenpublicador: "lib/assets/images/Erick.jpeg",
                     text: "Esta es mi primera publiacion que nervios tengo omg esto si que mola",
                     date: "4 de Febrero de 2020"
                   ),
                   ObjetoTexto(
                       publicador: "Anubius Rubius Malandrus",
-                      imagenpublicador: "lib/assets/images/Toth.png",
+                      imagenpublicador: "lib/assets/images/Erick.jpeg",
                       text: "Esta es mi primera publiacion que nervios tengo omg esto si que mola",
                       date: "4 de Febrero de 2020"
                   ),
                   ObjetoTexto(
                       publicador: "Anubius Rubius Malandrus",
-                      imagenpublicador: "lib/assets/images/Toth.png",
+                      imagenpublicador: "lib/assets/images/Erick.jpeg",
                       text: "Esta es mi primera publiacion que nervios tengo omg esto si que mola",
                       date: "4 de Febrero de 2020"
                   ),
@@ -133,22 +125,42 @@ class stateprofile extends State<profile>
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('Drawer Header'),
+              child: Stack(
+                  children: [
+                    Container(
+                      alignment: Alignment.topCenter,
+                      child: Image.asset("lib/assets/images/Erick.jpeg",width: 200, height: 200),
+                    ),
+                    Container(
+                      //width: 200,
+                      height: 200,
+                      padding: EdgeInsets.all(16.0),
+                      alignment: Alignment.bottomCenter,
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: <Color>[
+                                Colors.black.withAlpha(0),
+                                Colors.black12,
+                                Colors.black45,
+                              ]
+                          )
+                      ),
+                      child: Text("Toth (Usuario)", style: TextStyle(fontSize: 20,color: Colors.white)),
+                    )
+                  ]
+              ),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
             ),
             ListTile(
-              title: Text('Categorias'),
+              title: Text('Inicio'),
               onTap: () {
                 Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Text('Perfil'),
-              onTap: () {
-                Navigator.pushNamed(context, '/profile');
-                //Navigator.pop(context);
+                Navigator.pop(context);
+                Navigator.pop(context);
               },
             ),
             ListTile(

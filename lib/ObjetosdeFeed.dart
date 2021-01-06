@@ -63,3 +63,31 @@ class _ObjetoTextoState extends State<ObjetoTexto>
     );
   }
 }
+
+class ObjetoFoto extends StatefulWidget{
+  final String photo;
+  final String publicador;
+  final String imagenpublicador;
+  final String date;
+  int likes;
+
+  ObjetoFoto(
+      {
+        Key key,
+        this.photo,
+        this.likes,
+        this.publicador,
+        this.imagenpublicador,
+        this.date,
+      }):super(key:key);
+
+  @override
+  _StateObjetoFoto createState() => _StateObjetoFoto();
+}
+
+class _StateObjetoFoto extends State<ObjetoFoto>{
+  @override
+  Widget build(BuildContext context) {
+
+  }
+}
