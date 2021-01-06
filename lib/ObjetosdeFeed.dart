@@ -24,10 +24,26 @@ class ObjetoTexto extends StatefulWidget {
 
 class _ObjetoTextoState extends State<ObjetoTexto>
 {
-
   @override
   Widget build(BuildContext context) {
     //
+
+
+    if(widget.date == null )
+      return Container(
+        child: Text("Date null"),
+      );
+
+    if(widget.text == null )
+      return Container(
+        child: Text("Descripcion null"),
+      );
+
+    if(widget.publicador == null )
+      return Container(
+        child: Text("Publicador null"),
+      );
+
     return Container(
       padding: EdgeInsets.symmetric(vertical: 20,horizontal: 0),
       width: MediaQuery.of(context).size.width*0.8,

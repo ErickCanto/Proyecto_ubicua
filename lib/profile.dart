@@ -1,6 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:intl/intl.dart';
 import 'package:proyecto_ubicua/ObjetosdeFeed.dart';
+import 'package:flutter/foundation.dart';
+
+final databaseReference = Firestore.instance;
 
 class profile extends StatefulWidget{
   @override
@@ -18,6 +23,8 @@ enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 class stateprofile extends State<profile>
 {
   var _selection = WhyFarther.tradingCharter;
+
+  final DateFormat formatter = DateFormat('yyyy-MM-dd HH:mm:ss');
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +64,7 @@ class stateprofile extends State<profile>
                             ]
                           )
                         ),
-                        child: Text("Toth (Usuario)", style: TextStyle(fontSize: 20,color: Colors.white)),
+                        child: Text("Bad Bunny", style: TextStyle(fontSize: 20,color: Colors.white)),
                       )
                     ],
                   ),
@@ -68,9 +75,7 @@ class stateprofile extends State<profile>
                         decoration: BoxDecoration(
                             border: Border.all(width: 2,color: Colors.blue,)
                         ),
-                        child: Text("Aqui se vería la biografia del sujeto que e"
-                            "sté usando la aplicacion, solo espero que no se des"
-                            "borde el texto porque me mato",textAlign: TextAlign.center, style: TextStyle(color: Colors.black87,fontSize: 15),),
+                        child: Text("Yo no hago cancione', hago himnos pa' que no caduquen",textAlign: TextAlign.center, style: TextStyle(color: Colors.black87,fontSize: 15),),
                       ),
                   ),
                   //TODO: Este sería el boton para reportar y cosas así. Aun no se como va a ir
@@ -105,23 +110,93 @@ class stateprofile extends State<profile>
                   ),
                   //TODO: A partir de aqui se comenzaría a llenar con cosas de la persona
                   //TODO: Voy a investigar la forma de hacerlo fácil
-                  ObjetoTexto(
-                    publicador: "Anubius Rubius Malandrus",
-                    imagenpublicador: "lib/assets/images/Toth.png",
-                    text: "Esta es mi primera publiacion que nervios tengo omg esto si que mola",
-                    date: "4 de Febrero de 2020"
-                  ),
-                  ObjetoTexto(
-                      publicador: "Anubius Rubius Malandrus",
-                      imagenpublicador: "lib/assets/images/Toth.png",
-                      text: "Esta es mi primera publiacion que nervios tengo omg esto si que mola",
-                      date: "4 de Febrero de 2020"
-                  ),
-                  ObjetoTexto(
-                      publicador: "Anubius Rubius Malandrus",
-                      imagenpublicador: "lib/assets/images/Toth.png",
-                      text: "Esta es mi primera publiacion que nervios tengo omg esto si que mola",
-                      date: "4 de Febrero de 2020"
+                  Column(
+                      children: <Widget>[
+                        Container(
+                          child: FutureBuilder(
+                            future: getData(),
+                            builder: (context, snapshot)
+                            {
+                              if(snapshot.connectionState == ConnectionState.waiting)
+                                return Column(
+                                    children: [
+                                      Container(
+                                          alignment: Alignment.center,
+                                          child: Column(children: <Widget>[
+                                            Padding(
+                                              padding: const EdgeInsets.fromLTRB(8, 6, 8, 3),
+                                              child:  Text("Cargando",textAlign: TextAlign.center, style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                                            )
+                                          ]
+                                          )
+
+                                      ),
+                                    ]);
+                              else
+                              {
+                                return ListView(
+                                  shrinkWrap: true,
+                                  children: [
+                                    SizedBox(
+                                      height: 400,
+                                      child: ListView.builder(
+                                          shrinkWrap: true,
+                                          itemCount: snapshot.data.length,
+                                          itemBuilder: (context, index)
+                                          {
+                                            int cont = index;
+                                            if(snapshot.data[index].data()["usuario"] == 'Bad Bunny')
+                                              {
+                                                return
+                                                  Column(
+                                                    children: <Widget>[
+                                                      ObjetoTexto(
+                                                        publicador: snapshot.data[index].data()["usuario"],
+                                                        imagenpublicador: "lib/assets/images/Toth.png",
+                                                        text: snapshot.data[index].data()["descripcion"],
+                                                        date: formatter.format(snapshot.data[index].data()["fecha"].toDate()),
+                                                      ),
+                                                      Row(
+                                                        children: <Widget>[
+                                                          Padding(
+                                                            padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                                                            child: SizedBox(
+                                                                height: 50,
+                                                                child:
+                                                                ButtonTheme(
+                                                                    minWidth: 50,
+                                                                    child:
+                                                                    RaisedButton(onPressed: (){
+                                                                      deleteData(cont);
+                                                                    },
+                                                                        child:
+                                                                        Text('Eliminar',
+                                                                            style: TextStyle(color: Colors.white)),
+                                                                        color: Colors.red)
+                                                                )
+                                                            ),
+
+                                                          )
+
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  );
+
+                                              }
+                                            else
+                                              return Container();
+
+                                          }
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              }
+                            },
+                          ),
+                        ),
+                      ]
                   ),
                 ],
               )
@@ -161,5 +236,23 @@ class stateprofile extends State<profile>
         ),
       ),
     );
+  }
+}
+
+Future getData() async
+{
+  QuerySnapshot q = await databaseReference.collection('publicacion').get();
+  return q.docs;
+}
+
+void deleteData(var id)
+{
+  debugPrint(id.toString() + "*************************************************************************************************************");
+  try{
+    //databaseReference.collection('publicacion').doc(id).delete();
+  }
+  catch(e)
+  {
+    print(e.toString());
   }
 }

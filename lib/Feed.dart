@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:proyecto_ubicua/ObjetosdeFeed.dart';
+import 'package:intl/intl.dart';
+
+final databaseReference = Firestore.instance;
 
 class Feed extends StatefulWidget{
     @override
@@ -12,6 +16,7 @@ class States extends State<Feed>
 {
   final searchcontroller = new TextEditingController();
   final databaseReference = FirebaseFirestore.instance;
+  final DateFormat formatter = DateFormat('yyyy-MM-dd HH:mm:ss');
 
   @override
   Widget build(BuildContext context) {
@@ -57,8 +62,9 @@ class States extends State<Feed>
                           shrinkWrap: true,
                           children: [
                               SizedBox(
-                              height: MediaQuery. of(context). size. height - 129,
+                              height: MediaQuery. of(context). size. height - 145,
                               child: ListView.builder(
+
                                   shrinkWrap: true,
                                   itemCount: snapshot.data.length,
                                   itemBuilder: (context, index)
@@ -66,39 +72,12 @@ class States extends State<Feed>
                                     return
                                       Column(
                                       children: <Widget>[
-                                        Container(
-                                          alignment: Alignment.center,
-                                          child: Column(children: <Widget>[
-                                            Row(
-                                              children: <Widget>[
-                                              Padding(
-                                                padding: const EdgeInsets.fromLTRB(8, 6, 8, 3),
-                                                child:  Text(snapshot.data[index].data()["usuario"],textAlign: TextAlign.left, style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                                              )
-                                              ],
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.fromLTRB(8, 6, 8, 6),
-                                              child:  Text(snapshot.data[index].data()["descripcion"],textAlign: TextAlign.center),
-                                            )
-
-                                            ]
-                                          ),
-                                          margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
-                                          decoration: new BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius:BorderRadius.circular(7),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.grey.withOpacity(0.5),
-                                                spreadRadius: 5,
-                                                blurRadius: 7,
-                                                offset: Offset(0, 3), // changes position of shadow
-                                              ),
-                                            ],
-                                          ),
-
-                                        )
+                                        ObjetoTexto(
+                                            publicador: snapshot.data[index].data()["usuario"],
+                                            imagenpublicador: "lib/assets/images/Toth.png",
+                                            text: snapshot.data[index].data()["descripcion"],
+                                            date: formatter.format(snapshot.data[index].data()["fecha"].toDate()),
+                                        ),
                                       ],
                                     );
                                   }
@@ -109,6 +88,11 @@ class States extends State<Feed>
                       }
                   },
                 ),
+              ),
+              FloatingActionButton(
+                onPressed: () => Navigator.pushNamed(context, '/pubCreate'),
+                tooltip: 'Increment',
+                child: Icon(Icons.add),
               ),
             ]
           ),
@@ -163,6 +147,6 @@ class States extends State<Feed>
 
 Future getData() async
 {
-  QuerySnapshot q = await databaseReference2.collection('publicacion').get();
+  QuerySnapshot q = await databaseReference.collection('publicacion').get();
   return q.docs;
 }

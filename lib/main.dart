@@ -1,3 +1,4 @@
+import 'package:proyecto_ubicua/pubCreate.dart';
 import 'package:proyecto_ubicua/register.dart';
 
 import 'login.dart';
@@ -24,11 +25,12 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         //'/': (context) => Start(),
-        '/welcome': (context)=> Welcome(),
-        '/login': (context)=>login(),
-        '/register': (context)=>register(),
-        '/feed': (context)=>Feed(),
-        '/profile': (context)=>profile(),
+        '/welcome': (context) => Welcome(),
+        '/login': (context) => login(),
+        '/register': (context) => register(),
+        '/feed': (context) => Feed(),
+        '/profile': (context) => profile(),
+        '/pubCreate': (context) => pubCreate(),
         //'/newacount': (context)=>NewAccount(),
         //'/home': (context)=>Home();
       },
