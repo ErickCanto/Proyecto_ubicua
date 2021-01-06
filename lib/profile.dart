@@ -46,7 +46,7 @@ class stateprofile extends State<profile>
                     children: [
                       Container(
                         alignment: Alignment.topCenter,
-                        child: Image.asset("lib/assets/images/Toth.png",width: 200, height: 200),
+                        child: Image.asset("lib/assets/images/Erick.jpeg",width: 200, height: 200),
                       ),
                       Container(
                         //width: 200,
@@ -152,7 +152,7 @@ class stateprofile extends State<profile>
                                                     children: <Widget>[
                                                       ObjetoTexto(
                                                         publicador: snapshot.data[index].data()["usuario"],
-                                                        imagenpublicador: "lib/assets/images/Toth.png",
+                                                        imagenpublicador: "lib/assets/images/Erick.jpeg",
                                                         text: snapshot.data[index].data()["descripcion"],
                                                         date: formatter.format(snapshot.data[index].data()["fecha"].toDate()),
                                                       ),
@@ -208,22 +208,42 @@ class stateprofile extends State<profile>
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('Drawer Header'),
+              child: Stack(
+                  children: [
+                    Container(
+                      alignment: Alignment.topCenter,
+                      child: Image.asset("lib/assets/images/Erick.jpeg",width: 200, height: 200),
+                    ),
+                    Container(
+                      //width: 200,
+                      height: 200,
+                      padding: EdgeInsets.all(16.0),
+                      alignment: Alignment.bottomCenter,
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: <Color>[
+                                Colors.black.withAlpha(0),
+                                Colors.black12,
+                                Colors.black45,
+                              ]
+                          )
+                      ),
+                      child: Text("Toth (Usuario)", style: TextStyle(fontSize: 20,color: Colors.white)),
+                    )
+                  ]
+              ),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
             ),
             ListTile(
-              title: Text('Categorias'),
+              title: Text('Inicio'),
               onTap: () {
                 Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Text('Perfil'),
-              onTap: () {
-                Navigator.pushNamed(context, '/profile');
-                //Navigator.pop(context);
+                Navigator.pop(context);
+                Navigator.pop(context);
               },
             ),
             ListTile(
