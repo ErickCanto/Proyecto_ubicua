@@ -103,7 +103,7 @@ class register extends StatelessWidget{
                           ButtonTheme(
                               minWidth: 300,
                               child:
-                              RaisedButton(onPressed: (){Navigator.pushNamed(context, '/Inicio');}, child: Text('Continuar',style: TextStyle(color: Colors.white)),color: Colors.blue)
+                              RaisedButton(onPressed: (){Navigator.pushNamed(context, '/feed');}, child: Text('Continuar',style: TextStyle(color: Colors.white)),color: Colors.blue)
                           )
                       ),
                     ]

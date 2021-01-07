@@ -85,19 +85,11 @@ class stateprofile extends State<profile>
                     itemBuilder: (BuildContext context) => <PopupMenuEntry<WhyFarther>>[
                       const PopupMenuItem<WhyFarther>(
                         value: WhyFarther.harder,
-                        child: Text('Working a lot harder'),
+                        child: Text('Reportar Usuario'),
                       ),
                       const PopupMenuItem<WhyFarther>(
                         value: WhyFarther.smarter,
-                        child: Text('Being a lot smarter'),
-                      ),
-                      const PopupMenuItem<WhyFarther>(
-                        value: WhyFarther.selfStarter,
-                        child: Text('Being a self-starter'),
-                      ),
-                      const PopupMenuItem<WhyFarther>(
-                        value: WhyFarther.tradingCharter,
-                        child: Text('Placed in charge of trading charter'),
+                        child: Text('Reportar un problema con esta página'),
                       ),
                     ],
                   ),
@@ -160,7 +152,8 @@ class stateprofile extends State<profile>
                                                         children: <Widget>[
                                                           Padding(
                                                             padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-                                                            child: SizedBox(
+                                                            child: Container(
+                                                                width: MediaQuery.of(context).size.width*0.8,
                                                                 height: 50,
                                                                 child:
                                                                 ButtonTheme(
@@ -179,6 +172,8 @@ class stateprofile extends State<profile>
                                                           )
 
                                                         ],
+                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                        crossAxisAlignment: CrossAxisAlignment.center,
                                                       ),
                                                     ],
                                                   );

@@ -72,7 +72,10 @@ class _ObjetoTextoState extends State<ObjetoTexto>
               border: Border.all(color: Colors.blueAccent),
               borderRadius: BorderRadius.all(Radius.circular(6)),
             ),
-            child: Text(widget.text,style: TextStyle(fontSize: 18,color: Colors.black),),
+            child: FractionallySizedBox(
+              widthFactor: 1,
+              child: Text(widget.text,style: TextStyle(fontSize: 18,color: Colors.black),),
+            )
           )
         ],
       )
